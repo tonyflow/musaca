@@ -10,7 +10,7 @@ services:
       timeout: 5s
       retries: 10
     environment:
-      POSTGRES_USER: admin
+      POSTGRES_USER: postgres
       POSTGRES_PASSWORD: admin
       POSTGRES_DB: musaca
     volumes:
