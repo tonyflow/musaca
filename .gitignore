@@ -1,2 +1,14 @@
 musaca-backend/.idea/
 musaca-backend/.venv/
+musaca-backend/migrations/versions/__pycache__/
+musaca-backend/musaca/__pycache__/
+musaca-backend/musaca/database/__pycache__/
+musaca-backend/migrations/__pycache__/
+
+
+# Node modules (dependencies)
+musaca-frontend/node_modules/
+musaca-frontend/node_modules/*
+musaca-frontend/dist/
+musaca-frontend/out-tsc/
+musaca-frontend/coverage/
