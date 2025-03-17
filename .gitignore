@@ -12,3 +12,4 @@ musaca-frontend/node_modules/*
 musaca-frontend/dist/
 musaca-frontend/out-tsc/
 musaca-frontend/coverage/
+musaca-frontend/.vscode/
