@@ -15,7 +15,7 @@ export class HomeComponent {
 
   onLogout() {
     this.router.navigate(["login"]).then((result) => {
-      alert("Login Successful");
+      console.log("Login Successful");
     })
   }
 

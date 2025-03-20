@@ -10,6 +10,17 @@ services:
       POSTGRES_DB: musaca
     volumes:
       - musaca-db:/var/lib/postgres/data
+  web:
+    build:
+      context: ..
+      dockerfile: deployment/web.dockerfile
+    volumes:
+      - ../musaca-backend/musaca:/usr/musaca/
+    ports:
+      - 8000:8000
+    command: ["fastapi","dev","api/server.py"]
+#    command: ["ls","-altr"]
+#    command: ["pwd"]
 volumes:
   musaca-db:
 

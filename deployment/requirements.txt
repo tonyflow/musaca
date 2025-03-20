@@ -1,0 +1,4 @@
+fastapi[standard]==0.115.11
+gunicorn==22.0.0
+alembic==1.14.1
+psycopg2-binary==2.9.10

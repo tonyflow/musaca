@@ -16,6 +16,9 @@ export class SignupComponent {
   public signUpForm !: FormGroup
   public email: string | undefined;
   public password: string | undefined;
+  public username: string | undefined;
+  public name: string | undefined;
+  public surname: string | undefined;
 
   constructor(private formBuilder: FormBuilder, private http: HttpClient, private router: Router) {
     // this.email = "an_email@gmail.com";
@@ -32,7 +35,13 @@ export class SignupComponent {
   onSignup() {
     this.signUpForm.reset();
     this.router.navigate(["login"]).then((result: boolean) => {
-      alert('SIGN-IN SUCCESSFUL');
+      console.log('SIGN-IN SUCCESSFUL');
+    });
+  }
+
+  backToLogin(): void {
+    this.router.navigate(["login"]).then((result: boolean) => {
+      console.log('Back to login...')
     });
   }
 }
