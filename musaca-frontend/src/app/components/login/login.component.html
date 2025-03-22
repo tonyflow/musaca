@@ -1,13 +1,28 @@
-<div>
-  <h2>Login</h2>
-  <form [formGroup]="loginForm" (ngSubmit)="login()">
-    <label>Username:</label><br>
-    <input formControlName="username" name="username" required><br><br>
-    <label>Password:</label><br>
-    <input type="password" formControlName="password" name="password" required><br><br>
-    <button type="submit">Login</button>
-  </form>
-  <p>Not yet a member</p>
-  <button (click)="signUp()">SignUp</button>
-  <br>
+<div class="container mt-4">
+  <div class="row mb-4 justify-content-md-center">
+    <div class="col-md-4">
+      <h2>Musaca</h2>
+    </div>
+  </div>
+  <div class="row mb-4 justify-content-md-center">
+    <div class="col-md-4">
+      <p>A place for music academies worldwide</p>
+    </div>
+  </div>
+  <div class="row mb-4 justify-content-md-center">
+    <div class="col-md-4">
+      <h2>Login</h2>
+      <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <label>Username:</label><br>
+        <input formControlName="username" name="username" required><br><br>
+        <label>Password:</label><br>
+        <input type="password" formControlName="password" name="password" required><br><br>
+        <button type="submit">Login</button>
+      </form>
+      <p>Not yet a member?</p>
+      <button (click)="signUp()">SignUp</button>
+      <br>
+    </div>
+  </div>
+
 </div>

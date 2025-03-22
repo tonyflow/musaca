@@ -1,17 +1,21 @@
-<div>
-  <h2>Signup</h2>
-  <form [formGroup]="signUpForm" (ngSubmit)="onSignup()">
-    <label>Name:</label><br>
-    <input  formControlName="name" name="name" required><br><br>
-    <label>Surname:</label><br>
-    <input  formControlName="surname" name="surname" required><br><br>
-    <label>Email:</label><br>
-    <input type="email" formControlName="email" name="email" required><br><br>
-    <label>Username:</label><br>
-    <input  formControlName="username" name="username" required><br><br>
-    <label>Password:</label><br>
-    <input type="password" formControlName="password" name="password" required><br><br>
-    <button type="submit">Signup</button>
-  </form>
-  <button (click)="backToLogin()">Back to login page...</button><br>
+<div class="container mt-4">
+  <div class="row mb-4 justify-content-md-center">
+    <div class="col-md-4">
+      <h2>Signup</h2>
+      <form [formGroup]="signUpForm" (ngSubmit)="onSignup()">
+        <label>Name:</label><br>
+        <input  formControlName="name" name="name" required><br><br>
+        <label>Surname:</label><br>
+        <input  formControlName="surname" name="surname" required><br><br>
+        <label>Email:</label><br>
+        <input type="email" formControlName="email" name="email" required><br><br>
+        <label>Username:</label><br>
+        <input  formControlName="username" name="username" required><br><br>
+        <label>Password:</label><br>
+        <input type="password" formControlName="password" name="password" required><br><br>
+        <button type="submit">Signup</button>
+      </form>
+      <button (click)="backToLogin()">Back to login page...</button><br>
+    </div>
+  </div>
 </div>
