@@ -27,14 +27,16 @@ _logger = logging.getLogger(__name__)
 
 @app.get("/")
 def healthcheck():
+    return 204
+
+
+@app.get("/users")
+async def get_all_users():
     db_session: orm.Session = sql_engine.DatabaseEngine.get_session()
-    result = db_session.execute(
+    all_users = db_session.execute(
         sqlalchemy.select(database_user.User).select_from(database_user.User)
     ).scalars()
-    # for r in result:
-    #     _logger.info(f"All users {r}")
-    #     _logger.info(f"All users {r.name}{r.surname}{r.password}{r.username}{r.email}")
-    return {"result": result.all()}
+    return all_users.all()
 
 
 @app.post("/users/login")

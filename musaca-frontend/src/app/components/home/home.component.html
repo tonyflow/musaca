@@ -1,3 +1,44 @@
-<h2>Welcome Home</h2>
-<p>You are logged in.</p>
-<button (click)="onLogout()">Logout</button>
+<div class="container mt-4">
+  <div class="row">
+    <h2>Welcome to Musaca</h2>
+  </div>
+  <div class="row mb-4">
+    <div class="col-md-4">
+      <div class="p-3 border bg-light">Latest Tracks</div>
+      <ul class="list-group">
+        <li *ngFor="let item of latestTracks" class="list-group-item">
+          {{ item.trackName }} - {{ item.artist }}
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-4">
+      <div class="p-3 border bg-light">Now Playing</div>
+      <img alt="foo" [src]="currentThumbnail.url" class="img-fluid"/>
+      <audio controls [src]="currentTrack.audioUrl"></audio>
+    </div>
+    <div class="col-md-4">
+      <div class="row">
+        <div class="p-3 border bg-light">Contributors</div>
+      </div>
+      <div class="row">What about here? There should be a section about either the history of the track or the
+        musicians that are playing in the track or both!
+      </div>
+    </div>
+  </div>
+  <div class="row mb-4">
+    <div class="col-md-2">
+      <div class="p-3 border bg-light">Followed Academies</div>
+      <img *ngFor="let logo of followedAcademies"
+           [src]="logo.logoURL"
+           class="img-fluid rounded-circle"
+           alt="logo"
+           style="width: 40px; height: 40px; object-fit: cover;">
+    </div>
+  </div>
+  <div class="row mb-4">
+    <div class="col-md-2">
+      <button (click)="onLogout()">Logout</button>
+    </div>
+  </div>
+</div>
+
