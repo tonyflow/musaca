@@ -1,16 +1,16 @@
 <div>
   <h2>Signup</h2>
-  <form (ngSubmit)="onSignup()">
+  <form [formGroup]="signUpForm" (ngSubmit)="onSignup()">
     <label>Name:</label><br>
-    <input  [(ngModel)]="name" name="name" required><br><br>
+    <input  formControlName="name" name="name" required><br><br>
     <label>Surname:</label><br>
-    <input  [(ngModel)]="surname" name="surname" required><br><br>
+    <input  formControlName="surname" name="surname" required><br><br>
     <label>Email:</label><br>
-    <input type="email" [(ngModel)]="email" name="email" required><br><br>
+    <input type="email" formControlName="email" name="email" required><br><br>
     <label>Username:</label><br>
-    <input  [(ngModel)]="username" name="username" required><br><br>
+    <input  formControlName="username" name="username" required><br><br>
     <label>Password:</label><br>
-    <input type="password" [(ngModel)]="password" name="password" required><br><br>
+    <input type="password" formControlName="password" name="password" required><br><br>
     <button type="submit">Signup</button>
   </form>
   <button (click)="backToLogin()">Back to login page...</button><br>

@@ -15,10 +15,10 @@ services:
       context: ..
       dockerfile: deployment/web.dockerfile
     volumes:
-      - ../musaca-backend/musaca:/usr/musaca/
+      - ../musaca-backend/musaca:/usr/musaca-backend/musaca
     ports:
       - 8000:8000
-    command: ["fastapi","dev","api/server.py"]
+    command: ["fastapi","dev","--host","0.0.0.0","musaca/api/server.py"]
 #    command: ["ls","-altr"]
 #    command: ["pwd"]
 volumes:

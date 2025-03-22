@@ -14,11 +14,6 @@ import {FormGroup, FormBuilder, ReactiveFormsModule, FormsModule} from '@angular
 })
 export class SignupComponent {
   public signUpForm !: FormGroup
-  public email: string | undefined;
-  public password: string | undefined;
-  public username: string | undefined;
-  public name: string | undefined;
-  public surname: string | undefined;
 
   constructor(private formBuilder: FormBuilder, private http: HttpClient, private router: Router) {
     // this.email = "an_email@gmail.com";
@@ -28,15 +23,36 @@ export class SignupComponent {
   ngOnInit(): void {
     this.signUpForm = this.formBuilder.group({
       email: [""],
-      password: [""]
+      password: [""],
+      username: [""],
+      name: [""],
+      surname: [""],
     })
   }
 
   onSignup() {
-    this.signUpForm.reset();
-    this.router.navigate(["login"]).then((result: boolean) => {
-      console.log('SIGN-IN SUCCESSFUL');
-    });
+    const {email, password, username, name, surname} = this.signUpForm.value;
+
+    console.log(email, password, username, name, surname)
+    this.http.post('http://localhost:8000/users', {
+      email: email,
+      password: password,
+      username: username,
+      name: name,
+      surname: surname
+    }).subscribe(
+      {
+        next: (response) => {
+          this.router.navigate(["login"]).then((result: boolean) => {
+            alert('User creation was successful. Try logging in');
+          });
+        },
+        error: error => {
+          console.error(error);
+        }
+      }
+    );
+
   }
 
   backToLogin(): void {
